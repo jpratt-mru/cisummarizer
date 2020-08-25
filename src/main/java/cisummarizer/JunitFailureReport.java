@@ -40,7 +40,7 @@ import java.util.function.Function;
 public class JunitFailureReport extends Report {
 
   public JunitFailureReport(Parser status) {
-    super(status, "junit");
+    super(status, "junit failures");
   }
 
   @Override

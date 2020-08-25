@@ -18,7 +18,7 @@ public class SimpleJunitErrorParserTest {
   private SimpleXmlParser parser;
 
   public static Stream<String> filesWithInvalidData() {
-    return Stream.of("blorp", "empty.xml", "malformed.xml", "valid-xml-but-not-pmd.xml");
+    return Stream.of("blorp", "empty.xml", "malformed.xml", "valid-xml-but-not-junit.xml");
   }
 
   protected void makeParserFor(String fileName) {
@@ -40,9 +40,20 @@ public class SimpleJunitErrorParserTest {
 
   @Test
   @DisplayName(
-      "it should have no problems and no errors when given path to a pmd result with no errors")
+      "it should have an error saying no tests ran if given path to junit result when junit couldn't run")
+  public void it_should_have_error_saying_no_tests_ran_if_given_path_to_such_a_junit_result() {
+
+    makeParserFor("no-tests-ran-result.xml");
+
+    assertThat(parser.problems()).isEmpty();
+    assertThat(parser.errors()).contains("no tests ran!");
+  }
+
+  @Test
+  @DisplayName(
+      "it should have no problems and no errors when given path to a junit result with no errors")
   public void
-      it_should_have_no_problems_and_no_errors_when_given_a_path_to_pmd_result_with_no_errors() {
+      it_should_have_no_problems_and_no_errors_when_given_a_path_to_junit_result_with_no_errors() {
 
     makeParserFor("valid-no-failures-or-errors.xml");
 
@@ -54,7 +65,7 @@ public class SimpleJunitErrorParserTest {
   @DisplayName(
       "it should have one problem and no errors when given a path to a junit result with one test error")
   public void
-      it_should_have_one_problem_and_no_errors_when_given_a_path_to_pmd_result_with_one_error() {
+      it_should_have_one_problem_and_no_errors_when_given_a_path_to_junit_result_with_one_error() {
 
     makeParserFor("valid-no-failures-one-error.xml");
 

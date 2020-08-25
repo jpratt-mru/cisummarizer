@@ -37,7 +37,7 @@ public class PmdReportTest {
     Report report = new PmdReport(mockedParser);
 
     assertThat(report).hasHeader("[pmd]");
-    assertThat(report.summary()).isEqualTo("no pmd violations found");
+    assertThat(report.summary()).isEqualTo("violations found: 0");
     assertThat(report.details()).isEmpty();
   }
 
@@ -53,7 +53,7 @@ public class PmdReportTest {
     Report report = new PmdReport(mockedParser);
 
     assertThat(report).hasHeader("[pmd]");
-    assertThat(report.summary()).isEqualTo("pmd violations found: 1");
+    assertThat(report.summary()).isEqualTo("violations found: 1");
     assertThat(report.details()).containsExactly("|", "|-- violationType");
   }
 
@@ -72,7 +72,7 @@ public class PmdReportTest {
     Report report = new PmdReport(mockedParser);
 
     assertThat(report).hasHeader("[pmd]");
-    assertThat(report.summary()).isEqualTo("pmd violations found: 2");
+    assertThat(report.summary()).isEqualTo("violations found: 2");
     assertThat(report.details()).containsExactly("|", "|-- violationTypeA", "|-- violationTypeB");
   }
 
@@ -93,7 +93,7 @@ public class PmdReportTest {
     Report report = new PmdReport(mockedParser);
 
     assertThat(report).hasHeader("[pmd]");
-    assertThat(report.summary()).isEqualTo("pmd violations found: 1");
+    assertThat(report.summary()).isEqualTo("violations found: 1");
     assertThat(report.details()).containsExactly("|", "|-- violationTypeA");
   }
 
@@ -115,7 +115,7 @@ public class PmdReportTest {
     Report report = new PmdReport(mockedParser);
 
     assertThat(report).hasHeader("[pmd]");
-    assertThat(report.summary()).isEqualTo("pmd violations found: 4");
+    assertThat(report.summary()).isEqualTo("violations found: 4");
     assertThat(report.details())
         .containsExactly(
             "|",

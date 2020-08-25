@@ -8,14 +8,14 @@ import java.util.function.Function;
  * <p>Here's what a JunitErrorReport looks like when there are no errors and no problems:
  *
  * <pre>
- * [junit]
- * no junit errors found
+ * [junit errors]
+ * errors found: 0
  * </pre>
  *
  * <p>Here's what a JunitErrorReport looks like when with one error and no problems:
  *
  * <pre>
- * [junit]
+ * [junit errors]
  * something bad happened:
  * |
  * |-- bad thing
@@ -26,8 +26,8 @@ import java.util.function.Function;
  * (or display name) of the test that error'd out - these are all displayed in alphabetic order:
  *
  * <pre>
- * [junit]
- * junit errors found: 4
+ * [junit errors]
+ * errors found: 4
  * |
  * |-- [ClassA] some method A
  * |-- [ClassA] some method B
@@ -40,7 +40,7 @@ import java.util.function.Function;
 public class JunitErrorReport extends Report {
 
   public JunitErrorReport(SimpleJunitErrorParser parser) {
-    super(parser, "junit");
+    super(parser, "junit errors");
   }
 
   @Override

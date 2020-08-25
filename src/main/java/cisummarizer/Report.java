@@ -84,10 +84,8 @@ abstract class Report {
   public String summary() {
     if (errorsEncountered) {
       return "something bad happened:";
-    } else if (numProblems == 0) {
-      return String.format("no %s %s found", reportType, nameForProblems());
     } else {
-      return String.format("%s %s found: %d", reportType, nameForProblems(), numProblems);
+      return String.format("%s found: %d", nameForProblems(), numProblems);
     }
   }
 

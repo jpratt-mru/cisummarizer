@@ -21,7 +21,7 @@ public class JunitFailureReportTest {
 
     Report report = new JunitFailureReport(mockedParser);
 
-    assertThat(report).hasHeader("[junit]");
+    assertThat(report).hasHeader("[junit failures]");
     assertThat(report.summary()).isEqualTo("something bad happened:");
     assertThat(report.details()).containsExactly("|", "|-- foo");
   }
@@ -37,8 +37,8 @@ public class JunitFailureReportTest {
 
     Report report = new JunitFailureReport(mockedParser);
 
-    assertThat(report).hasHeader("[junit]");
-    assertThat(report.summary()).isEqualTo("no junit failures found");
+    assertThat(report).hasHeader("[junit failures]");
+    assertThat(report.summary()).isEqualTo("failures found: 0");
     assertThat(report.details()).isEmpty();
   }
 
@@ -54,8 +54,8 @@ public class JunitFailureReportTest {
 
     Report report = new JunitFailureReport(mockedParser);
 
-    assertThat(report).hasHeader("[junit]");
-    assertThat(report.summary()).isEqualTo("junit failures found: 1");
+    assertThat(report).hasHeader("[junit failures]");
+    assertThat(report.summary()).isEqualTo("failures found: 1");
     assertThat(report.details()).containsExactly("|", "|-- [violationLocation] methodName");
   }
 
@@ -74,8 +74,8 @@ public class JunitFailureReportTest {
 
     Report report = new JunitFailureReport(mockedParser);
 
-    assertThat(report).hasHeader("[junit]");
-    assertThat(report.summary()).isEqualTo("junit failures found: 2");
+    assertThat(report).hasHeader("[junit failures]");
+    assertThat(report.summary()).isEqualTo("failures found: 2");
     assertThat(report.details())
         .containsExactly(
             "|", "|-- [violationLocationA] methodNameA", "|-- [violationLocationB] methodNameB");
@@ -98,8 +98,8 @@ public class JunitFailureReportTest {
 
     Report report = new JunitFailureReport(mockedParser);
 
-    assertThat(report).hasHeader("[junit]");
-    assertThat(report.summary()).isEqualTo("junit failures found: 4");
+    assertThat(report).hasHeader("[junit failures]");
+    assertThat(report.summary()).isEqualTo("failures found: 4");
     assertThat(report.details())
         .containsExactly(
             "|",

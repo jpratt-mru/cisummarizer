@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
 public abstract class SimpleXmlParser implements Parser {
 
   private List<Problem> problems;
-  private List<String> errors;
+  protected List<String> errors;
   private Document root;
 
   public SimpleXmlParser(String parserType, Path pathToResults) {
@@ -37,6 +37,8 @@ public abstract class SimpleXmlParser implements Parser {
     if (!validRoot()) {
       errors.add(String.format("not a %s file", parserType));
     }
+
+    validateFurther();
   }
 
   @Override
@@ -50,11 +52,6 @@ public abstract class SimpleXmlParser implements Parser {
   @Override
   public List<String> errors() {
     return errors;
-  }
-
-  private boolean validRoot() {
-
-    return nodesOfInterest(rootExpression()).anyMatch(e -> true);
   }
 
   abstract String rootExpression();
@@ -71,6 +68,15 @@ public abstract class SimpleXmlParser implements Parser {
     String slashConverted = absoluteLocation.replace("\\", "/");
     int indexOfLastSlash = slashConverted.lastIndexOf("/");
     return slashConverted.substring(indexOfLastSlash + 1);
+  }
+
+  protected void validateFurther() {
+    // only needed if further validation needed (like with junit results)
+  }
+
+  private boolean validRoot() {
+
+    return nodesOfInterest(rootExpression()).anyMatch(e -> true);
   }
 
   private List<Problem> parsedProblems() {

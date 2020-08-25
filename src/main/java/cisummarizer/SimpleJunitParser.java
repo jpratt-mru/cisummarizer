@@ -34,4 +34,11 @@ public abstract class SimpleJunitParser extends SimpleXmlParser {
     String displayName = problemType.substring(indexOfDisplayName + 14).trim();
     return String.format("test %s: %s", problemSeverity, displayName);
   }
+
+  @Override
+  public void validateFurther() {
+    if (nodesOfInterest("/testsuite/testcase").count() == 0) {
+      errors.add("no tests ran!");
+    }
+  }
 }
