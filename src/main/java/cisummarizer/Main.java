@@ -42,10 +42,20 @@ public class Main {
         new SimpleJunitFailureParser(RESULTS_DIR.resolve("junit-results.xml"));
     Report junitFailureReport = new JunitFailureReport(junitFailureParser);
 
+    String flawlessNotification = "";
+    if (isFlawless(compilationParser)
+        && isFlawless(checkstyleParser)
+        && isFlawless(pmdParser)
+        && isFlawless(junitErrorParser)
+        && isFlawless(junitFailureParser)) {
+      flawlessNotification = "FLAWLESS!";
+    }
+
     String summary =
         String.join(
             "\n\n",
             summaryHeader,
+            flawlessNotification,
             compilationReport.allContent(),
             checkstyleReport.allContent(),
             pmdReport.allContent(),
@@ -61,5 +71,9 @@ public class Main {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  private boolean isFlawless(Parser parser) {
+    return parser.errors().isEmpty() && parser.problems().isEmpty();
   }
 }

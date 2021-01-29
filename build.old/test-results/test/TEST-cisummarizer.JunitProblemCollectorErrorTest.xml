@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cisummarizer.JunitProblemCollectorErrorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-12T23:15:00" hostname="LAPTOP-631HSM73" time="0.028">
+  <properties/>
+  <testcase name="it_should_have_no_problems_but_have_errors_when_given_a_path_to_bad_file(String)[1]" classname="cisummarizer.JunitProblemCollectorErrorTest" time="0.004"/>
+  <testcase name="it_should_have_no_problems_but_have_errors_when_given_a_path_to_bad_file(String)[2]" classname="cisummarizer.JunitProblemCollectorErrorTest" time="0.004"/>
+  <testcase name="it_should_have_no_problems_but_have_errors_when_given_a_path_to_bad_file(String)[3]" classname="cisummarizer.JunitProblemCollectorErrorTest" time="0.003"/>
+  <testcase name="it_should_have_no_problems_but_have_errors_when_given_a_path_to_bad_file(String)[4]" classname="cisummarizer.JunitProblemCollectorErrorTest" time="0.004"/>
+  <testcase name="forInfinitest()" classname="cisummarizer.JunitProblemCollectorErrorTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[java.nio.file.NoSuchFileException: src\test\resources\junit-problem-collector\blorp
+]]></system-err>
+</testsuite>

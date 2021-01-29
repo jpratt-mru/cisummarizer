@@ -1,0 +1,12 @@
+cisummarizer/PmdProblemCollectorTest.java
+ cisummarizer.PmdProblemCollectorTest
+cisummarizer/CheckstyleProblemCollectorTest.java
+ cisummarizer.CheckstyleProblemCollectorTest
+cisummarizer/PmdProblemCollectorErrorTest.java
+ cisummarizer.PmdProblemCollectorErrorTest
+cisummarizer/JunitProblemCollectorErrorTest.java
+ cisummarizer.JunitProblemCollectorErrorTest
+cisummarizer/CheckstyleProblemCollectorErrorTest.java
+ cisummarizer.CheckstyleProblemCollectorErrorTest
+cisummarizer/JunitProblemCollectorTest.java
+ cisummarizer.JunitProblemCollectorTest

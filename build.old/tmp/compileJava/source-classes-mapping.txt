@@ -1,0 +1,32 @@
+cisummarizer/Parser.java
+ cisummarizer.Parser
+cisummarizer/Problem.java
+ cisummarizer.Problem
+cisummarizer/SimpleCompilationParser.java
+ cisummarizer.SimpleCompilationParser
+cisummarizer/SimpleJunitErrorParser.java
+ cisummarizer.SimpleJunitErrorParser
+cisummarizer/SimplePmdParser.java
+ cisummarizer.SimplePmdParser
+cisummarizer/Report.java
+ cisummarizer.Report
+cisummarizer/SimpleCheckstyleParser.java
+ cisummarizer.SimpleCheckstyleParser
+cisummarizer/PmdReport.java
+ cisummarizer.PmdReport
+cisummarizer/SimpleJunitFailureParser.java
+ cisummarizer.SimpleJunitFailureParser
+cisummarizer/CompilationReport.java
+ cisummarizer.CompilationReport
+cisummarizer/JunitErrorReport.java
+ cisummarizer.JunitErrorReport
+cisummarizer/SimpleXmlParser.java
+ cisummarizer.SimpleXmlParser
+cisummarizer/CheckstyleReport.java
+ cisummarizer.CheckstyleReport
+cisummarizer/SimpleJunitParser.java
+ cisummarizer.SimpleJunitParser
+cisummarizer/JunitFailureReport.java
+ cisummarizer.JunitFailureReport
+cisummarizer/Main.java
+ cisummarizer.Main
